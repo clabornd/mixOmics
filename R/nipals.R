@@ -158,6 +158,7 @@ nipals <- function (X,
                 ph.new = crossprod(X, th) / drop(crossprod(th))
             }
             
+            ph.new = replace(ph.new, which(is.na(ph.new)), 0)
             ph.new = ph.new / drop(sqrt(crossprod(ph.new)))
             
             if (na.X)
